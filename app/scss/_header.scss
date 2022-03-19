@@ -1,0 +1,36 @@
+// Navbar
+
+
+.header {
+    > nav {
+        padding: 24px;
+    }
+
+    &_logo {
+        img {
+    
+        }
+    }
+
+    &_hamburger {
+        > span { // ">" direct child selector
+            display: block;
+            width: 24px;
+            height: 2px; // for each individual stroke
+            background-color: $darkGreen;
+    
+            &:not(:last-child) {
+                margin-bottom: 5px;
+            }
+        }
+    }
+
+    &_primary-nav{
+        list-style: none;
+
+        a, a:visited{
+            font-size: calc(14rem / 16); // unit can only be specified inside value, or else error
+            color: $grey;
+        }
+    }
+}
