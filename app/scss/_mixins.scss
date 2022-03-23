@@ -1,0 +1,23 @@
+// Breakpoints
+    // Use 'em' as most consistent among browsers
+@media (min-width: calc(1024em / 16)){ // desktop 1024px
+    // style goes here
+}
+
+// Set breakpoints with min. value [640px, 1024px, 1400px]
+$breakpoints-up: ("medium": calc(640em / 16), "large": calc(1024em / 16), "xlarge": calc(1400em / 16));
+// Sometimes we may want to set breakpoints with max. value [639px, 1023px, 1399px]
+$breakpoints-down: ("small": calc(639.99em / 16), "medium": calc(1023.99em / 16), "large": calc(1399.99em / 16));
+
+// media queries
+@mixin breakpoint-up($size){
+    @media (min-width: map-get($breakpoints-up, $size)){
+        @content;
+    }
+}
+
+@mixin breakpoint-down($size){
+    @media (max-width: map-get($breakpoints-down, $size)){
+        @content;
+    }
+}

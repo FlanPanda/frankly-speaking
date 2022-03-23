@@ -1,14 +1,12 @@
 // Navbar
-
-
 .header {
     > nav {
-        padding: 24px;
+        padding: 12px 40px;
     }
 
     &_logo {
         img {
-    
+            
         }
     }
 
@@ -27,10 +25,24 @@
 
     &_primary-nav{
         list-style: none;
-
-        a, a:visited{
-            font-size: calc(14rem / 16); // unit can only be specified inside value, or else error
-            color: $grey;
+        a {
+            font-size: calc(16rem / 16); // unit can only be specified inside value, or else error
+            margin-left: 4em;
         }
+    }
+}
+
+// Visibility
+.mobile-hide{
+    // hide for tablet and mobile devices
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.desktop-hide{
+    // hide for desktop viewport min width
+    @include breakpoint-up(large){
+        display: none;
     }
 }
