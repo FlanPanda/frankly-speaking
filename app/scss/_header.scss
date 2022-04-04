@@ -1,33 +1,46 @@
 // Navbar
 .header {
+    
     > nav {
         padding: 12px 40px;
     }
 
     &_logo {
         img {
-            
+            height: calc(30rem / 16);
         }
     }
 
     &_hamburger {
         > span { // ">" direct child selector
             display: block;
-            width: 24px;
-            height: 2px; // for each individual stroke
+            
+            width: calc(24rem / 16);
+            height: calc(1rem / 16); // for each individual stroke
             background-color: $darkGreen;
-    
+            &:nth-child(2) {
+                width: calc(16rem / 16);
+            }
             &:not(:last-child) {
-                margin-bottom: 5px;
+                margin-bottom: calc(6rem / 16);
             }
         }
     }
 
-    &_primary-nav{
+    &_primary-nav {
+        // display: inline;
         list-style: none;
+
         a {
+            display: block;
+            text-align: center;
+            padding: calc(14rem / 16) calc(16rem / 16);
+            margin-left: 50px;
+            font-weight: 400;
             font-size: calc(16rem / 16); // unit can only be specified inside value, or else error
-            margin-left: 4em;
+            &:hover {
+                background-color: grey;
+            }
         }
     }
 }
