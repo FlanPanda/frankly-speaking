@@ -1,0 +1,72 @@
+// Navbar (CodeSnippets + CoderCoder)
+.container{
+    max-width: calc(960em / 16);
+    margin: 0 auto; // center container horizontally 
+    padding: 12px;
+}
+
+.navbar{
+    display: flex;
+    flex-wrap: wrap; // allows children inside flex container to wrap down to next line when out of space
+    align-items: center; // center children of flex container vertically
+    justify-content: space-between; // add even space between each child of a flex container
+    background-color: $white;
+    border: 1px solid black;
+    padding: 15px;
+    height: 60px;
+
+    > a{
+        text-decoration: none;
+        color: $grey;
+    }
+}
+
+.nav{
+    &_logo{
+        margin-right: 50px;
+        img {
+            display: block; // fix weird padding at the bottom of image
+            height: calc(25rem / 16);
+        }
+    }
+
+    &_hamburger {
+        > span { // ">" direct child selector
+            display: block;
+            
+            width: calc(24rem / 16);
+            height: calc(2rem / 16); // for each individual stroke
+            background-color: $darkGreen;
+            &:nth-child(2) {
+                width: calc(16rem / 16);
+            }
+            &:not(:last-child) {
+                margin-bottom: calc(6rem / 16);
+            }
+        }
+    }
+
+    &_list{
+        list-style: none;
+        display: flex;
+        gap: 50px; // applies to right and bottom spacing between children inside a flex or grid container
+        padding: 0px; // uncertain why 40px left by default
+        margin: 0px; // uncertain why 16px 0px by default
+        line-height: 1;
+    }
+}
+
+// Visibility
+.mobile-hide{
+    // hide for tablet and mobile devices
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.desktop-hide{
+    // hide for desktop viewport min width
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
