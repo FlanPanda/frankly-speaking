@@ -23,10 +23,9 @@
 
 .nav{
     &_logo{
-        margin-right: 50px;
         img {
             display: block; // fix weird padding at the bottom of image
-            height: calc(25rem / 16);
+            height: calc(24rem / 16);
         }
     }
 
@@ -67,6 +66,20 @@
 .desktop-hide{
     // hide for desktop viewport min width
     @include breakpoint-up(large){
+        display: none;
+    }
+}
+
+.full-logo-hide{
+    // hide semi-logo
+    @include breakpoint-up(small){
+        display: none;
+    }
+}
+
+.semi-logo-hide{
+    // hide full-logo
+    @include breakpoint-down(xsmall){
         display: none;
     }
 }
